@@ -168,12 +168,17 @@ nav {
     /*background-color: white;*/
     height: 90%;
     width: 90%;
-    transition: opacity 0.3s ease;
-    opacity: 1;
+    overflow: hidden;
+    display: flex;
+    transition: transform 0.5s ease;
 }
 
-.wrapper-content.hide {
-    opacity: 0;           /* Set opacity to 0 to hide the content */
+.wrapper-content.move-left {
+    transform: translateX(-100%);
+}
+
+.wrapper-content.move-right {
+    transform: translateX(100%);
 }
 
 .icon-left, .icon-right {

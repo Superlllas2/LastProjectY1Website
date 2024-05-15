@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const contents = [
         '<p>Content 1: Details about feature one.</p>',
         '<p>Content 2: Details about feature two.</p>',
@@ -9,32 +9,35 @@ document.addEventListener('DOMContentLoaded', function() {
     const wrapperContent = document.querySelector('.wrapper-content');
     wrapperContent.innerHTML = contents[currentIndex]; // Initialize with the first content
 
-    function changeContent(newIndex) {
-        // Start the fade out
-        wrapperContent.classList.add('hide');
+    function changeContent(newIndex, direction) {
+        // Add class based on direction and initiate animation
+        wrapperContent.classList.add(direction === 'left' ? 'move-right' : 'move-left');
 
-        // Wait for the fade out to finish
+        // Wait for the animation to finish before changing content
         setTimeout(() => {
-            // Change the content when invisible
+            // Reset transform and update content
+            wrapperContent.classList.remove('move-left', 'move-right');
             wrapperContent.innerHTML = contents[newIndex];
-            // Start the fade in
-            wrapperContent.classList.remove('hide');
-        }, 300); // Match the CSS transition duration
+            // Forcing reflow for immediate repositioning
+            void wrapperContent.offsetWidth;
+
+            // Slide back in from the opposite direction
+            wrapperContent.classList.add(direction === 'left' ? 'move-right' : 'move-left');
+            setTimeout(() => {
+                wrapperContent.classList.remove('move-left', 'move-right');
+            }, 50); // Short delay to reposition
+        }, 500); // This timeout should match the CSS transition time
     }
 
-    document.querySelector('.icon-left').addEventListener('click', function() {
+    document.querySelector('.icon-left').addEventListener('click', function () {
         if (currentIndex > 0) {
-            currentIndex--; // Decrement index to show previous content
-            wrapperContent.innerHTML = contents[currentIndex];
-            changeContent(currentIndex);
+            changeContent(--currentIndex, 'left');
         }
     });
 
-    document.querySelector('.icon-right').addEventListener('click', function() {
+    document.querySelector('.icon-right').addEventListener('click', function () {
         if (currentIndex < contents.length - 1) {
-            currentIndex++; // Increment index to show next content
-            wrapperContent.innerHTML = contents[currentIndex];
-            changeContent(currentIndex);
+            changeContent(++currentIndex, 'right');
         }
     });
 });
