@@ -168,6 +168,12 @@ nav {
     /*background-color: white;*/
     height: 90%;
     width: 90%;
+    transition: opacity 0.3s ease;
+    opacity: 1;
+}
+
+.wrapper-content.hide {
+    opacity: 0;           /* Set opacity to 0 to hide the content */
 }
 
 .icon-left, .icon-right {
