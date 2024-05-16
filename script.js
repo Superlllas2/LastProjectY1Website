@@ -11,16 +11,29 @@ document.addEventListener('DOMContentLoaded', function() {
         '<p>Text for the third slide. It explains what is the game about without specific information</p>'
     ];
 
+    const backgroundImages = [
+        "url('Sources/logo3D.png')",
+        "url('Sources/poster1.png')",
+        "url('Sources/logo3D.png')"
+    ];
+
     let currentIndex = 0; // Start with the first item
 
     const wrapperContentH1 = document.querySelector('.wrapper-content-text-h1');
     const wrapperContentP = document.querySelector('.wrapper-content-text-p');
+    const wrapperContentFigure = document.querySelector('.wrapper-content-figure');
 
-    const wrapperContent = document.querySelector('.wrapper-content');
-    wrapperContent.innerHTML = contentsH1[currentIndex]; // Initialize with the first content
+    function updateContent(index) {
+        wrapperContentH1.innerHTML = contentsH1[index];
+        wrapperContentP.innerHTML = contentsP[index];
+        wrapperContentFigure.style.backgroundImage = backgroundImages[index];
+    }
+
+    updateContent(currentIndex);
 
     function changeContent(newIndex) {
         // Start the fade out
+        const wrapperContent = document.querySelector('.wrapper-content');
         wrapperContent.classList.add('hide');
 
         // Listen for the end of the fade-out transition
@@ -31,7 +44,7 @@ document.addEventListener('DOMContentLoaded', function() {
             console.log("next text");
 
             // Change the content when invisible
-            wrapperContent.innerHTML = contentsH1[newIndex];
+            updateContent(newIndex);
 
             // Start the fade in
             wrapperContent.classList.remove('hide');

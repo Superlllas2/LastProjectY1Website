@@ -149,7 +149,7 @@ nav {
 
 .mainSection-content .topLogo h1 {
     margin-top: 4rem;
-    /*animation: pulsate 0.11s ease-in-out infinite alternate;*/
+    animation: pulsate 0.11s ease-in-out infinite alternate;
     font-size: 8rem;
     font-weight: bold;
 }
@@ -181,23 +181,24 @@ nav {
     flex: 2;
 }
 
-.wrapper-content-text{
+.wrapper-content-text {
     flex: 2;
+    margin-right: 30px;
 }
 
-.wrapper-content-text h1{
+.wrapper-content-text h1 {
     text-align: center;
     padding-bottom: 1rem;
     font-size: 36px;
 }
 
-.wrapper-content-text p{
+.wrapper-content-text p {
     text-align: justify;
     font-size: 20px;
 }
 
 .wrapper-content.hide {
-    opacity: 0;           /* Set opacity to 0 to hide the content */
+    opacity: 0;
 }
 
 .icon-left, .icon-right {
