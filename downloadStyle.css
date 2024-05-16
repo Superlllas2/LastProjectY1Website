@@ -140,101 +140,40 @@ nav {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 80%;
-}
-
-.mainSection-content .topLogo {
-    text-align: center;
-}
-
-.mainSection-content .topLogo h1 {
-    margin-top: 4rem;
-    animation: pulsate 0.11s ease-in-out infinite alternate;
-    font-size: 8rem;
-    font-weight: bold;
-}
-
-.wrapper {
-    background-color: rgb(22, 22, 22, 0.6);
-    margin-top: 15px;
-    height: 70%;
-    width: 90%;
-    display: flex;
+    width: 73%;
     justify-content: center;
-    align-items: center;
 }
 
-.wrapper-content {
-    /*background-color: white;*/
-    height: 90%;
-    width: 90%;
-    transition: opacity 0.2s ease-in-out;
-    opacity: 1;
-    display: flex;
-}
-
-.wrapper-content-figure {
-    background-image: url("Sources/logo3D.png");
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-    flex: 2;
-}
-
-.wrapper-content-text {
-    flex: 2;
-    margin-right: 30px;
-    margin-left: 30px;
-}
-
-.wrapper-content-text h1 {
-    text-align: center;
-    padding-bottom: 1rem;
-    font-size: 36px;
-}
-
-.wrapper-content-text p {
-    text-align: justify;
-    font-size: 20px;
-    display: flex;
-    flex-direction: column;
-}
-
-.wrapper-content.hide {
-    opacity: 0;
-}
-
-.icon-left, .icon-right {
-    width: 50px;
-    height: 50px;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-color: rgb(0, 0, 0, 0);
-    border: none;
-    transform: scale(1);
-    transition-duration: 0.1s;
-}
-
-.icon-left:hover, .icon-right:hover {
+.download-button {
+    width: 100%;
+    height: 50%;
     cursor: pointer;
-    transform: scale(1.1);
-    transition-duration: 0.1s;
-}
-
-.icon-left {
-    background-image: url("Sources/angle-left.svg");
-}
-
-.icon-right {
-    background-image: url("Sources/angle-right.svg");
-}
-
-#specific-date {
+    border-style: none;
+    background-image: linear-gradient(92.88deg, #455EB5 9.16%, #5643CC 43.89%, #673FD7 64.72%);
+    border-radius: 8px;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    flex-shrink: 0;
+    font-weight: 500;
+    padding: 0 1.6rem;
     text-align: center;
-    justify-content: center;
-    align-items: center;
-    font-size: 32px;
-    animation: pulsate 0.11s ease-in-out infinite alternate;
+    font-size: 56px;
+    text-shadow: rgba(0, 0, 0, 0.25) 0 3px 8px;
+    transition: all .5s;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    box-shadow: rgba(80, 63, 205, 0.5) 0 1px 30px;
+}
+
+.download-button:active {
+    box-shadow: rgba(50, 50, 93, 0.25) 0 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0 18px 36px -18px inset;
+}
+
+.a-button {
+    width: 100%;
+    height: 100%;
+    align-content: center;
 }
 
 footer {

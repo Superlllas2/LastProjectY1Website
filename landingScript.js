@@ -7,9 +7,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const contentsP = [
         '<p>Tired of just simply waiting? Don\'t have anything to do in the bus or train? We got you covered. Our creation BallBlaze will help you in solving this problem. Our game is a timekiller which you can play anywhere and you dont need a WiFi connection. </p>',
-        '<p>BallBlaze is a 2D physics based puzzle game.In this game you will need to build your way through a dangerous arcade machine which the owner has modified to make you lose. Your main goal is to complete all of the levels, and complete all of the levels on 3 stars</p>',
-        '<p>Our game will release on IOS and Android systems on May 17th 2024. \n' +
-        '16/05/2024</p>'
+        '<p>BallBlaze is a 2D physics based puzzle game. In this game you will need to build your way through a dangerous arcade machine which the owner has modified to make you lose. <br><br> ' +
+        'Your goal is to complete all the levels, by solving puzzled physics quests and collecting stars<br><br>' +
+        'Try yourself in our neon madness!</p>',
+        '<p>Our game will be released on iOS and Android on May 17th 2024. <br><br></p> <span id="specific-date">17/05/2024</span>'
     ];
 
     const backgroundImages = [
